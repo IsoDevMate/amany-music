@@ -9,7 +9,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Nav/>
     <Mood/>
-    <Wellness/>
     <Search/>
+    <Wellness/>
+    
   </React.StrictMode>,
 )

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import IMG2 from '../assets/bible_bitmoji.png'
 
 export const Search = () => {
   const [topic, setTopic] = useState('');
@@ -31,24 +32,30 @@ export const Search = () => {
   };
 
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} />
-            <input type="submit" value="Search" />
+    <div className='grid grid-cols-2'>
+
+      <div className='flex justify-center items-center'>
+        <img src={IMG2} alt="" className='h-3/4 object-cover' />
+      </div>
+
+      <div className='flex justify-center items-center flex-col'>
+        <form onSubmit={handleSubmit} className='flex justify-center items-center'>
+            <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} className='px-2 py-1 border border-black rounded'/>
+            <input type="submit" value="Search"  className='mx-2 px-2 py-1 bg-slate-100 rounded'/>
         </form>
 
-        <div className=''>
+        <div>
         <ul>
         {result.map((item, index) => (
-        <li key={index} className='bg-red-600 text-white'>
+        <li key={index} className='bg-red-600 text-white rounded m-4 p-2'>
       <p>Scriptures: {item.scriptures.join(', ')}</p>
       <p>Text: {item.text}</p>
         </li>
         ))}
         </ul>
         </div>
-        
+    </div>
 
     </div>
-  )
+      )
 }
