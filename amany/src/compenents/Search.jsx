@@ -49,7 +49,7 @@ export const Search = () => {
         {result.map((item, index) => (
         <li key={index} className='bg-red-600 text-white rounded m-4 p-2'>
       <p>Scriptures: {item.scriptures.join(', ')}</p>
-      <p>Text: {item.text}</p>
+      <p>Devotion: {item.text}</p>
         </li>
         ))}
         </ul>
