@@ -14,7 +14,9 @@ export const Mood = () => {
 ]
 
 const [token, setToken] = useState('');
-const [genres, setGenres] = useState([]);
+const [genres, setGenres] = useState({selectedGenre: '', listOfGenresFromAPI: []});
+const [playlist, setPlaylist] = useState({selectedPlaylist: '', listOfPlaylistFromAPI: []});
+
 
 useEffect(()=>{
   axios('https://accounts.spotify.com/api/token', {
@@ -34,21 +36,51 @@ useEffect(()=>{
       headers: { 'Authorization' : 'Bearer ' + tokenResponse.data.access_token}
     })
     .then(genreResponse => {
-      setGenres(genreResponse.data.categories.items);
+      setGenres({
+        selectedGenre: genres.selectedGenre,
+        listOfGenresFromAPI: genreResponse.data.categories.items
+      });
     });
   });
-
-
-
     
-}, []);
+}, [genres.selectedGenre, CLIENT_ID, SECRET_KEY]);
+
+ const genreChanged = val => {
+    setGenres({
+      selectedGenre: val, 
+      listOfGenresFromAPI: genres.listOfGenresFromAPI
+    });
+
+    axios(`https://api.spotify.com/v1/browse/categories/${val}/playlists?limit=10`, {
+      method: 'GET',
+      headers: { 'Authorization' : 'Bearer ' + token}
+    })
+    .then(playlistResponse => {
+      setPlaylist({
+        selectedPlaylist: playlist.selectedPlaylist,
+        listOfPlaylistFromAPI: playlistResponse.data.playlists.items
+      })
+    });
+
+    console.log(val);
+  }
+
+  const playlistChanged = val => {
+    console.log(val);
+    setPlaylist({
+      selectedPlaylist: val,
+      listOfPlaylistFromAPI: playlist.listOfPlaylistFromAPI
+    });
+  }
 
   return (
     <div className='grid grid-cols-2' id='Mood'>
       <div className='bg-red-600 h-full'>
         <div>
         <form action="" onSubmit={()=>{}}>
-        <Dropdown options={genres}/>
+        <Dropdown options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged}/>
+        <Dropdown options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged}/>
+
         <button type="submit">Get music</button>
         </form>
         </div>
