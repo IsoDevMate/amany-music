@@ -7,7 +7,7 @@ const Dropdown = props => {
   }
     
   return (
-    <div>
+    <div className='border border-black w-max mt-2'>
         <select value={props.selectedValue} onChange={dropdownChanged}>
             {props.options.map((item,idx) => <option key={idx} value={item.id}>{item.name}</option>)}
         </select>

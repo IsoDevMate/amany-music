@@ -107,13 +107,13 @@ useEffect(()=>{
 
   return (
     <div className='grid grid-cols-2' id='Mood'>
-      <div className='bg-red-600 h-full'>
+      <div className='h-full'>
         <div>
         <form action="" onSubmit={buttonClicked}>
         <Dropdown options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged}/>
         <Dropdown options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged}/>
 
-        <button type="submit">Get music</button>
+        <button type="submit" className='m-2 px-2 py-1 bg-green-800 text-white rounded'>Get music</button>
         <div className="row">
             <Listbox items={tracks.listOfTracksFromAPI} clicked={listboxClicked} />
             {trackDetail && <Detail {...trackDetail} /> }
