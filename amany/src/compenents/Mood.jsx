@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import IMG1 from "../assets/harp_bitmoji.png";
 import Dropdown from './Dropdown';
+import Listbox from './Listbox';
 import axios from 'axios';
 
 export const Mood = () => {
@@ -16,6 +17,8 @@ export const Mood = () => {
 const [token, setToken] = useState('');
 const [genres, setGenres] = useState({selectedGenre: '', listOfGenresFromAPI: []});
 const [playlist, setPlaylist] = useState({selectedPlaylist: '', listOfPlaylistFromAPI: []});
+const [tracks, setTracks] = useState({selectedTrack: '', listOfTracksFromAPI: []});
+const [trackDetail, setTrackDetail] = useState(null);
 
 
 useEffect(()=>{
@@ -73,15 +76,48 @@ useEffect(()=>{
     });
   }
 
+  const buttonClicked = e => {
+    e.preventDefault();
+
+    axios(`https://api.spotify.com/v1/playlists/${playlist.selectedPlaylist}/tracks?limit=10`, {
+      method: 'GET',
+      headers: {
+        'Authorization' : 'Bearer ' + token
+      }
+    })
+    .then(tracksResponse => {
+      setTracks({
+        selectedTrack: tracks.selectedTrack,
+        listOfTracksFromAPI: tracksResponse.data.items
+      })
+    });
+  }
+
+  const listboxClicked = val => {
+
+    const currentTracks = [...tracks.listOfTracksFromAPI];
+
+    const trackInfo = currentTracks.filter(t => t.track.id === val);
+
+    setTrackDetail(trackInfo[0].track);
+
+
+
+  }
+
   return (
     <div className='grid grid-cols-2' id='Mood'>
       <div className='bg-red-600 h-full'>
         <div>
-        <form action="" onSubmit={()=>{}}>
+        <form action="" onSubmit={buttonClicked}>
         <Dropdown options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged}/>
         <Dropdown options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged}/>
 
         <button type="submit">Get music</button>
+        <div className="row">
+            <Listbox items={tracks.listOfTracksFromAPI} clicked={listboxClicked} />
+            {trackDetail && <Detail {...trackDetail} /> }
+          </div>
         </form>
         </div>
       </div>
