@@ -1,20 +1,28 @@
 import React from 'react'
-import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom'
-import { Mood } from './Mood'
-import { Wellness } from './Wellness'
+import {createBrowserRouter,BrowserRouter, Routes, Route, NavLink, createRoutesFromElements, RouterProvider} from 'react-router-dom'
+import { Mood } from '../compenents/Mood/Mood'
+import { Wellness } from '../compenents/Wellness/Wellness'
 import { Home } from './Home'
 import { Nav } from './Nav'
+import { RootLayout } from './RootLayout'
 
-
-export const Pages = () => {
-  return (
-    <BrowserRouter>
-        <Nav/>
-        <Routes>
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<RootLayout/>}>
             <Route index element={<Home/>}/>
             <Route path='MoodBoost' element={<Mood/>}/>
             <Route path='WellnessAccess' element={<Wellness/>}/>
-        </Routes>
-    </BrowserRouter>
+        </Route>
+  )
+)
+
+export const Pages = () => {
+  return (
+    <div>
+      
+      <RouterProvider router={router}/>
+    </div>
+        
+    
   )
 }

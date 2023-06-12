@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import IMG1 from "../assets/harp_bitmoji.png";
+import IMG1 from "../../assets/harp_bitmoji.png";
 import Dropdown from './Dropdown';
 import Listbox from './Listbox';
 import axios from 'axios';

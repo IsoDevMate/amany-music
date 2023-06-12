@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import IMG2 from '../assets/bible_bitmoji.png'
+import IMG2 from '../../assets/bible_bitmoji.png'
 
 export const Search = () => {
   const [topic, setTopic] = useState('');

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import IMG3 from '../assets/hand_bitmoji.png'
+import IMG3 from '../../assets/hand_bitmoji.png'
 
 
 
