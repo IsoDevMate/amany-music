@@ -40,8 +40,8 @@ export const Search = () => {
 
       <div className='flex justify-center items-center flex-col'>
         <form onSubmit={handleSubmit} className='flex justify-center items-center'>
-            <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} className='block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline'/>
-            <input type="submit" value="Search"  className='mx-2 px-2 py-1 bg-slate-100 rounded'/>
+            <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} className='block appearance-none w-full bg-white border text-black border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline'/>
+            <input type="submit" value="Search"  className='mx-2 px-2 py-1 bg-slate-100 text-black rounded'/>
         </form>
 
         <div>

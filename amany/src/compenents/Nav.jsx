@@ -5,7 +5,7 @@ export const Nav = () => {
   return (
     <div className='flex justify-between p-4 '>
         <div className='text-red-600'>
-            <h1>AMANY</h1>
+            <NavLink to='/'><h1>Amany</h1></NavLink>
         </div>
         <nav className='flex gap-4 px-8'>
             <div>

@@ -108,12 +108,14 @@ useEffect(()=>{
   return (
     <div className='grid grid-cols-2'>
       <div className='h-full'>
-        <div>
+        <div className='mt-4 ml-4'>
+        <p>Feeling a bit low? Lift your spirits with some nice music!<br/>
+        Choose a your favourite genre and then a playlist, get your music and groove!</p>
         <form action="" onSubmit={buttonClicked}>
         <Dropdown options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged}/>
         <Dropdown options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged}/>
 
-        <button type="submit" className='m-2 px-2 py-1 bg-green-800 text-white rounded'>Get music</button>
+        <button type="submit" className='my-2 px-2 py-1 bg-green-600 text-white rounded'>Get music</button>
         <div className="row">
             <Listbox items={tracks.listOfTracksFromAPI} clicked={listboxClicked} />
             {trackDetail && <Detail {...trackDetail} /> }

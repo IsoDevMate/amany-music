@@ -4,7 +4,7 @@ import { Search } from './Search'
 
 export const Mood = () => {
   return (
-    <div>
+    <div className='bg-primary text-white'>
     <Music/>
     <Search/>
     </div>
