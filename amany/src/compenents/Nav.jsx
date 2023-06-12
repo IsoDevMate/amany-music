@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { NavLink, Link } from 'react-router-dom';
 
 export const Nav = () => {
   return (
@@ -7,15 +7,18 @@ export const Nav = () => {
         <div className='text-red-600'>
             <h1>AMANY</h1>
         </div>
-        <div className='flex gap-4 px-8'>
+        <nav className='flex gap-4 px-8'>
             <div>
-                <a href="#Mood">Mood Boost</a>
+                <NavLink to='/'>Home</NavLink>
             </div>
             <div>
-                <a href="#Wellness">Wellness Access</a>
+                <NavLink to='MoodBoost'>Mood Booster</NavLink>
+            </div>
+            <div>
+                <NavLink to='WellnessAccess'>Wellness Access</NavLink>
             </div>
                        
-        </div>
+        </nav>
     </div>
   )
 }

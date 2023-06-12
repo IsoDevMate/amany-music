@@ -1,16 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Nav } from './compenents/Nav.jsx'
-import { Mood } from './compenents/Mood.jsx'
-import { Wellness } from './compenents/Wellness.jsx'
-import { Search } from './compenents/Search.jsx'
+import { Pages } from './compenents/Pages.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Nav/>
-    <Mood/>
-    <Search/>
-    <Wellness/>
-    
+      
+      <Pages/>
+      
   </React.StrictMode>,
 )
