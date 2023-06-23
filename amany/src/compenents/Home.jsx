@@ -55,9 +55,16 @@ export const Home = () => {
               required
               className="p-2 rounded-md mb-4"
             />
+            <input
+              type="number"
+              name="phoneNumber"
+              placeholder="Your phone number"
+              required
+              className="p-2 rounded-md mb-4"
+            />
 
             <label htmlFor="availability" className='text-white'>Are you available for consultations?</label>
-            <div className='flex flex-row gap-4'>
+            <div className='flex flex-row gap-4 pb-4'>
             <input
               type="radio"
               name="availability"
@@ -76,14 +83,6 @@ export const Home = () => {
             <label for="availability" className='text-white'>No</label>
             </div>
             
-
-            <input
-              type="number"
-              name="phoneNumber"
-              placeholder="Your phone number"
-              required
-              className="p-2 rounded-md mb-4"
-            />
             {/* Button to submit the form */}
             <button
               type="submit"
