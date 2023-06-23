@@ -8,13 +8,13 @@ export const Nav = () => {
             <NavLink to='/'><h1>Amany</h1></NavLink>
         </div>
         <nav className='flex gap-4 px-8'>
-            <div>
+            <div  className='hover'>
                 <NavLink to='/'>Home</NavLink>
             </div>
-            <div>
+            <div className='hover'>
                 <NavLink to='WellnessAccess'>Wellness Access</NavLink>
             </div>
-            <div>
+            <div className='hover'>
                 <NavLink to='MoodBoost'>Mood Booster</NavLink>
             </div>
                        
