@@ -93,7 +93,7 @@ const Addiction = () => {
             </p>
 
             <p className="italic">
-            This article is intended to provide general information and does not replace professional help. Please seek advice from healthcare professionals for an accurate diagnosis and treatment.
+            This article is intended to provide general information and does not replace professional help. Please seek advice from healthcare professionals for an accurate diagnosis and treatment. You can also get help from a trained Community Health Volunteer(CHV) in your area below ⬇.
             </p>
 
         </div>
