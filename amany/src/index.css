@@ -5,3 +5,7 @@
 .hover{
     @apply hover:border-b-2 border-black    
 }
+
+.input-box{
+    @apply p-2 rounded-md mb-4
+}

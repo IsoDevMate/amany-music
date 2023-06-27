@@ -67,7 +67,7 @@ export const Home = () => {
             name='name'
             placeholder='Your full name'
             required
-            className='p-2 rounded-md mb-4'
+            className='input-box'
             value={formData.name}
             onChange={handleChange}
           />
@@ -76,7 +76,7 @@ export const Home = () => {
             name='gender'
             placeholder='Your gender'
             required
-            className='p-2 rounded-md mb-4'
+            className='input-box'
             value={formData.gender}
             onChange={handleChange}
           />
@@ -85,7 +85,7 @@ export const Home = () => {
             name='county'
             placeholder='Your county'
             required
-            className='p-2 rounded-md mb-4'
+            className='input-box'
             value={formData.county}
             onChange={handleChange}
           />
@@ -94,7 +94,7 @@ export const Home = () => {
             name='ward'
             placeholder='Your ward'
             required
-            className='p-2 rounded-md mb-4'
+            className='input-box'
             value={formData.ward}
             onChange={handleChange}
           />
@@ -131,7 +131,7 @@ export const Home = () => {
             name='phoneNumber'
             placeholder='Your phone number'
             required
-            className='p-2 rounded-md mb-4'
+            className='input-box'
             value={formData.phoneNumber}
             onChange={handleChange}
           />

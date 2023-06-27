@@ -1,4 +1,5 @@
 import React from 'react'
+import SearchForm from '../SearchForm'
 
 const Addiction = () => {
   return (
@@ -96,6 +97,9 @@ const Addiction = () => {
             This article is intended to provide general information and does not replace professional help. Please seek advice from healthcare professionals for an accurate diagnosis and treatment. You can also get help from a trained Community Health Volunteer(CHV) in your area below ⬇.
             </p>
 
+        </div>
+        <div className='flex justify-center items-center mt-10'>
+          <SearchForm/>
         </div>
     </div>
   )
