@@ -118,7 +118,7 @@ const SimulatePaymentModal = () => {
             <input
               className='border-2 border-gray-300 p-2 rounded-lg mb-2'
               name='phone'
-              placeholder='2547xxxxxxxx'
+              placeholder='07xxxxxxxx'
               onChange={handleInputChange}
               required
             />

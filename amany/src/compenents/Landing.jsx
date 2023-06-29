@@ -1,10 +1,7 @@
 import SimulatePaymentModal from './SimulatePaymentModal'
 
 export default function Landing() {
-<<<<<<< HEAD
 
-=======
->>>>>>> 45db0d2198d6e4047750622d24ac39a9563218b5
   return (
     <>
       <div className='flex items-center justify-center h-screen'>
