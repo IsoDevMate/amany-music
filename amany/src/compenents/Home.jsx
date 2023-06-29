@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Landing from './Landing';
 
 export const Home = () => {
   const [formData, setFormData] = useState({
@@ -39,8 +40,13 @@ export const Home = () => {
 
   return (
     <div className='bg-primary text-white'>
+
+      <Landing />
       <div className='px-8'>
-        <h1 className='font-bold text-lg py-8'>Did You Know?</h1>
+        <div className=' px-auto flex justify-center'>
+        <h1 className='font-bold text-5xl py-8'>Did You Know?</h1>
+       
+        </div>
         <div className='grid grid-cols-3'>
           <div className='flex items-center justify-center bg-white text-black rounded-full w-80 h-80'>
             <p className='p-10'>
